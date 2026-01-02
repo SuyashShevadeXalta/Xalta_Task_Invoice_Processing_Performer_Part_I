@@ -1,7 +1,7 @@
 {
-  "name": "Performaer Part I",
+  "name": "Performer Part I",
   "projectId": "5ae278a7-a1db-481b-beb6-fb09d6a4ad9f",
-  "description": "Performaer Part I",
+  "description": "Performer Part I",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[3.3.1]",
