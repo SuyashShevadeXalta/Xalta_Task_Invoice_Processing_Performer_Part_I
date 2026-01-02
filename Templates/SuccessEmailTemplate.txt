@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=""UTF-8"">
+    <style>
+        body {
+            background-color: transparent;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333333;
+        }
+
+    .container {
+        max-width: 650px;
+        margin: auto;
+        background-color: transparent;
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        color: #000000;
+    }
+
+    .title span {
+        margin-right: 8px;
+    }
+
+    .card {
+        border: 1px solid #dcdcdc;
+        border-radius: 6px;
+        padding: 15px;
+        margin-top: 10px;
+        background-color: #ffffff;
+    }
+
+    .row {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .label {
+        color: #555555;
+        font-weight: bold;
+    }
+
+    .value {
+        color: #000000;
+    }
+
+    .status-success {
+        margin-top: 10px;
+        color: #2e7d32;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+
+    .status-success span {
+        margin-right: 6px;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #555555;
+    }
+</style>
+
+</head>
+<body>
+<div Class=""container"">
+    <div Class=""title"">
+        <span>📄</span> Performer Part I Process Report 
+    </div>
+
+    <div Class=""card"">
+        <div Class=""row"">
+            <span Class=""label"">PDF Name:</span>
+            <span Class=""value"">{{PDFName}}</span>
+        </div>
+		
+        <div Class=""status-success"">
+            <span>✔</span> PDF Processed Successfully
+        </div>
+    </div>
+
+    <div Class=""footer"">
+        Regards,<br>
+        <strong>UiPath Bot</strong>
+    </div>
+</div>
+</body>
+</html>
