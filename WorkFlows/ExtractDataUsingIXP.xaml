@@ -2,6 +2,8 @@
   <x:Members>
     <x:Property Name="out_Exception" Type="OutArgument(s:Exception)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
+    <x:Property Name="out_DictExtractedDataTables" Type="OutArgument(scg:Dictionary(x:String, sd:DataTable))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -114,14 +116,14 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadInvoiceFromStorageBucket" sap:VirtualizedContainerService.HintSize="810.8000000000001,4156.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadInvoiceFromStorageBucket" sap:VirtualizedContainerService.HintSize="1170,5272.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" Name="DictExtractedDataTables" />
       <Variable x:TypeArguments="x:String" Name="CurrentKey" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtExtractedData" />
-      <Variable x:TypeArguments="x:String" Name="FilePath" />
       <Variable x:TypeArguments="uisad:IDocumentData(uisasegb:GptIxp45)" Name="ExtractionResults" />
       <Variable x:TypeArguments="njl:JObject" Name="HeaderDetailsJsonObject" />
     </Sequence.Variables>
@@ -152,7 +154,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <TryCatch DisplayName="Workflow with exception handling and retry scope" sap:VirtualizedContainerService.HintSize="588.8,4020" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <Assign sap:VirtualizedContainerService.HintSize="588.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[out_DictExtractedDataTables]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[New Dictionary(Of String, DataTable)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <TryCatch DisplayName="Workflow with exception handling and retry scope" sap:VirtualizedContainerService.HintSize="588.8,4961.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -160,13 +170,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="587.2,3509.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="587.2,4451.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="Extracting Header Details, Summary Data and Services in the form of data tables from the Invoices using IXP and storing all the data tables into a dictionary" sap:VirtualizedContainerService.HintSize="553.6,3445.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence sap2010:Annotation.AnnotationText="Extracting Header Details, Summary Data and Services in the form of data tables from the Invoices using IXP and storing all the data tables into a dictionary" sap:VirtualizedContainerService.HintSize="553.6,4387.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,7 +199,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasegb:GptIxp45" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Data from Invoice" DocType="gpt_ixp_45" ExtractionResults="[ExtractionResults]" ExtractorName="gpt_ixp_45" FileInput="[UiPath.Platform.ResourceHandling.LocalResource.FromPath(FilePath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="520,353.6" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ModernDocumentTypeId="00000000-0000-0000-0000-000000000000" ModernDocumentTypeName="Default" ProjectId="efd10460-6cd2-80a6-94cb-b9e0bb5030ee" ProjectName="Invoice Task Demo" ProjectTag="[Nothing]" ProjectVersionName="45" ProjectVersionNumber="45" TimeoutInSeconds="3600">
+            <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasegb:GptIxp45" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Data from Invoice" DocType="gpt_ixp_45" ExtractionResults="[ExtractionResults]" ExtractorName="gpt_ixp_45" FileInput="[UiPath.Platform.ResourceHandling.LocalResource.FromPath(in_FilePath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="520,353.6" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ModernDocumentTypeId="00000000-0000-0000-0000-000000000000" ModernDocumentTypeName="Default" ProjectId="efd10460-6cd2-80a6-94cb-b9e0bb5030ee" ProjectName="Invoice Task Demo" ProjectTag="[Nothing]" ProjectVersionName="45" ProjectVersionNumber="45" TimeoutInSeconds="3600">
               <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
                 <InArgument x:TypeArguments="s:Nullable(x:Int32)">
                   <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
@@ -245,10 +255,10 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <Sequence DisplayName="Extract Header Details from JSON" sap:VirtualizedContainerService.HintSize="520,60.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence DisplayName="Extract Header Details from JSON" sap:VirtualizedContainerService.HintSize="520,884.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -324,22 +334,22 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <Assign DisplayName="Assign extracted data table to dictionary" sap:VirtualizedContainerService.HintSize="451.2,52" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign DisplayName="Assign extracted data table to dictionary" sap:VirtualizedContainerService.HintSize="451.2,169.6" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[DictExtractedDataTables]</OutArgument>
+                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[out_DictExtractedDataTables]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[New Dictionary(Of String, DataTable)(DictExtractedDataTables) From {{"HeaderDetails", dtExtractedData}}]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[New Dictionary(Of String, DataTable)(out_DictExtractedDataTables) From {{"HeaderDetails", dtExtractedData}}]</InArgument>
                 </Assign.Value>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
             </Sequence>
-            <Sequence DisplayName="Extract summary data from JSON" sap:VirtualizedContainerService.HintSize="520,949.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <Sequence DisplayName="Extract summary data from JSON" sap:VirtualizedContainerService.HintSize="520,1067.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
               <Sequence.Variables>
                 <Variable x:TypeArguments="njl:JObject" Name="SummaryDataJsonObject" />
               </Sequence.Variables>
@@ -445,16 +455,16 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <Assign sap:VirtualizedContainerService.HintSize="451.2,52" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign sap:VirtualizedContainerService.HintSize="451.2,169.6" sap2010:WorkflowViewState.IdRef="Assign_8">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[DictExtractedDataTables]</OutArgument>
+                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[out_DictExtractedDataTables]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[New Dictionary(Of String, DataTable)(DictExtractedDataTables) From {{"Summary", dtExtractedData}}]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)">[New Dictionary(Of String, DataTable)(out_DictExtractedDataTables) From {{"Summary", dtExtractedData}}]</InArgument>
                 </Assign.Value>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -644,7 +654,7 @@
                       </ui:LogMessage>
                       <Assign sap:VirtualizedContainerService.HintSize="451.2,56.8" sap2010:WorkflowViewState.IdRef="Assign_10">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="sd:DataTable">[DictExtractedDataTables(ServiceName)]</OutArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable">[out_DictExtractedDataTables(ServiceName)]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="sd:DataTable">[dtExtractedData]</InArgument>
