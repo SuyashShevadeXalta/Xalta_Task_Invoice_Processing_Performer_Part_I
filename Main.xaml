@@ -82,7 +82,7 @@
       <AssemblyReference>TestInvoice_2c773.tomUOBPTOF1EeBAHH4M3T1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="956.6666666666666,670.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1134,671.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:BusinessRuleException" Name="BusinessException" />
       <Variable x:TypeArguments="s:Exception" Name="SystemException" />
@@ -99,7 +99,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID6}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="962.6666666666666,490.32333333333327" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID6}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="1140,513.6" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -110,7 +110,7 @@
           <av:PointCollection x:Key="ConnectorLocation">145,150 175,150 175,149.66666666666669 200,149.66666666666669</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="Initializes the process by creating folders, creating configuration files and setting up audit and error logs" DisplayName="Initialization State" sap:VirtualizedContainerService.HintSize="220,139.33333333333334" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="Initializes the process by creating folders, creating configuration files and setting up audit and error logs" DisplayName="Initialization State" sap:VirtualizedContainerService.HintSize="220,140" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConfigWorkflow - Invoke Workflow File (WorkFlows\ConfigWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="334,150.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WorkFlows\ConfigWorkflow.xaml">
             <ui:InvokeWorkflowFile.Arguments>
@@ -123,7 +123,7 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,80</av:Point>
-            <av:Size x:Key="ShapeSize">220,139.33333333333334</av:Size>
+            <av:Size x:Key="ShapeSize">220,140</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             <x:Double x:Key="StateContainerWidth">207.69548484664708</x:Double>
@@ -140,7 +140,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Retrieves the invoices from the storage bucket and puts them in the right place so they’re ready for further use" DisplayName="Get Invoice" sap:VirtualizedContainerService.HintSize="496.66666666666674,860.6666666666666" sap2010:WorkflowViewState.IdRef="State_2">
+              <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Retrieves the invoices from the storage bucket and puts them in the right place so they’re ready for further use" DisplayName="Get Invoice" sap:VirtualizedContainerService.HintSize="209.6,140" sap2010:WorkflowViewState.IdRef="State_2">
                 <State.Entry>
                   <Sequence sap:VirtualizedContainerService.HintSize="450,416" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
@@ -172,7 +172,7 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">525,80</av:Point>
-                    <av:Size x:Key="ShapeSize">210,139.33333333333334</av:Size>
+                    <av:Size x:Key="ShapeSize">209.6,140</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">197.94863031479392</x:Double>
@@ -189,7 +189,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Reads the invoices and extracts the important details like dates, amounts, and vendor names." DisplayName="Data Extraction" sap:VirtualizedContainerService.HintSize="220,139.33333333333334" sap2010:WorkflowViewState.IdRef="State_3">
+                      <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Reads the invoices and extracts the important details like dates, amounts, and vendor names." DisplayName="Data Extraction" sap:VirtualizedContainerService.HintSize="220,140" sap2010:WorkflowViewState.IdRef="State_3">
                         <State.Entry>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExtractDataUsingIXP - Invoke Workflow File (WorkFlows\ExtractDataUsingIXP.xaml)" sap:VirtualizedContainerService.HintSize="338,150.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="WorkFlows\ExtractDataUsingIXP.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
@@ -201,7 +201,7 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">840,80</av:Point>
-                            <av:Size x:Key="ShapeSize">220,139.33333333333334</av:Size>
+                            <av:Size x:Key="ShapeSize">220,140</av:Size>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             <x:Double x:Key="StateContainerWidth">207.6783422090144</x:Double>
@@ -212,13 +212,13 @@
                           <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="555.3333333333334,796" sap2010:WorkflowViewState.IdRef="Transition_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:PointCollection x:Key="ConnectorLocation">1060,149.66666666666669 1075,149.66666666666669 1075,280 1045,280 1045,310</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">1060,150 1150.2,150 1150.2,310</av:PointCollection>
                                 <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
                                 <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Transition.To>
-                              <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Validates the extracted data for consistency checks to ensure accuracy and completeness before further processing." DisplayName="Data Validation" sap:VirtualizedContainerService.HintSize="380.6666666666667,641.3333333333334" sap2010:WorkflowViewState.IdRef="State_4">
+                              <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="Validates the extracted data for consistency checks to ensure accuracy and completeness before further processing." DisplayName="Data Validation" sap:VirtualizedContainerService.HintSize="230.4,140" sap2010:WorkflowViewState.IdRef="State_4">
                                 <State.Entry>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ValidateBusinessRule - Invoke Workflow File (WorkFlows\ValidateBusinessRule.xaml)" sap:VirtualizedContainerService.HintSize="334,150.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="WorkFlows\ValidateBusinessRule.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
@@ -230,7 +230,7 @@
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">1035,310</av:Point>
-                                    <av:Size x:Key="ShapeSize">20,20</av:Size>
+                                    <av:Size x:Key="ShapeSize">230.4,140</av:Size>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                     <x:Double x:Key="StateContainerWidth">218.03600088959055</x:Double>
@@ -241,13 +241,13 @@
                                   <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="555.3333333333334,796" sap2010:WorkflowViewState.IdRef="Transition_4">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:PointCollection x:Key="ConnectorLocation">1040,330 1040,540 225,540 225,570</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">1092.6,450 1092.6,480 225,480 225,570</av:PointCollection>
                                         <x:Int32 x:Key="SrcConnectionPointIndex">19</x:Int32>
                                         <x:Int32 x:Key="DestConnectionPointIndex">58</x:Int32>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Transition.To>
-                                      <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Write extracted and validated data into excel file with table name as sheet name and table data as sheet data." DisplayName="Write Data to Excel" sap:VirtualizedContainerService.HintSize="220,139.33333333333334" sap2010:WorkflowViewState.IdRef="State_6">
+                                      <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Write extracted and validated data into excel file with table name as sheet name and table data as sheet data." DisplayName="Write Data to Excel" sap:VirtualizedContainerService.HintSize="220,140" sap2010:WorkflowViewState.IdRef="State_6">
                                         <State.Entry>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WriteDataToSheet - Invoke Workflow File (WorkFlows\WriteDataToSheet.xaml)" sap:VirtualizedContainerService.HintSize="334,150.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="WorkFlows\WriteDataToSheet.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
@@ -272,17 +272,17 @@
                                           <Transition DisplayName="SystemException" sap:VirtualizedContainerService.HintSize="462,536.6666666666666" sap2010:WorkflowViewState.IdRef="Transition_6">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:PointCollection x:Key="ConnectorLocation">210,580 162.5,580 162.5,445.66666666666663</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">210,580 162.6,580 162.6,445.4</av:PointCollection>
                                                 <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
                                                 <x:Int32 x:Key="DestConnectionPointIndex">19</x:Int32>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <Transition.To>
-                                              <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText=" These State will Perform Final cleanup, completing logging activities and sending mail to developer and client regarding exception and sucess. Once these tasks are done, the process terminates." DisplayName="Final State" sap:VirtualizedContainerService.HintSize="270,170.66666666666666" sap2010:WorkflowViewState.IdRef="State_8" IsFinal="True">
+                                              <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText=" These State will Perform Final cleanup, completing logging activities and sending mail to developer and client regarding exception and sucess. Once these tasks are done, the process terminates." DisplayName="Final State" sap:VirtualizedContainerService.HintSize="270.4,170.4" sap2010:WorkflowViewState.IdRef="State_8" IsFinal="True">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">95,275</av:Point>
-                                                    <av:Size x:Key="ShapeSize">270,170.66666666666666</av:Size>
+                                                    <av:Size x:Key="ShapeSize">270.4,170.4</av:Size>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                     <x:Double x:Key="StateContainerWidth">258.11801111987245</x:Double>
@@ -301,7 +301,7 @@
                                           <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="555.3333333333334,796" sap2010:WorkflowViewState.IdRef="Transition_16">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:PointCollection x:Key="ConnectorLocation">218,570 218,540 297.5,540 297.5,445.66666666666663</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">218,570 218,540 297.79999999999995,540 297.79999999999995,445.4</av:PointCollection>
                                                 <x:Int32 x:Key="SrcConnectionPointIndex">30</x:Int32>
                                                 <x:Int32 x:Key="DestConnectionPointIndex">59</x:Int32>
                                               </scg:Dictionary>
@@ -357,7 +357,7 @@
                                   <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="555.3333333333334,796" sap2010:WorkflowViewState.IdRef="Transition_8">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:PointCollection x:Key="ConnectorLocation">1046,330 1046,580 640,580</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">1161.72,450 1161.72,580 640,580</av:PointCollection>
                                         <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                                         <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
                                       </scg:Dictionary>
@@ -409,7 +409,7 @@
                                           <Transition DisplayName="SystemException" sap:VirtualizedContainerService.HintSize="555.3333333333334,796" sap2010:WorkflowViewState.IdRef="Transition_7">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:PointCollection x:Key="ConnectorLocation">629,590 629,739.3333333333334 122,739.3333333333334 122,445.66666666666663</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">629,590 629,740 122.03999999999999,740 122.03999999999999,445.4</av:PointCollection>
                                                 <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
                                                 <x:Int32 x:Key="DestConnectionPointIndex">7</x:Int32>
                                               </scg:Dictionary>
@@ -458,14 +458,12 @@
                                         </Assign>
                                       </Sequence>
                                     </Transition.Action>
-                                    <Transition.Condition>
-                                      <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="SystemException is Nothing AndAlso False" />
-                                    </Transition.Condition>
+                                    <Transition.Condition>[SystemException is Nothing AndAlso False]</Transition.Condition>
                                   </Transition>
                                   <Transition DisplayName="SystemException" sap:VirtualizedContainerService.HintSize="555.3333333333334,972.6666666666666" sap2010:WorkflowViewState.IdRef="Transition_14">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:PointCollection x:Key="ConnectorLocation">1035,323 1005,323 1005,403 365,403</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">1035,401 1005,401 1005,402.8 365.4,402.8</av:PointCollection>
                                         <x:Int32 x:Key="SrcConnectionPointIndex">49</x:Int32>
                                         <x:Int32 x:Key="DestConnectionPointIndex">56</x:Int32>
                                       </scg:Dictionary>
