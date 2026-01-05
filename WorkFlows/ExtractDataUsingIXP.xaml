@@ -116,7 +116,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadInvoiceFromStorageBucket" sap:VirtualizedContainerService.HintSize="910,3920.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadInvoiceFromStorageBucket" sap:VirtualizedContainerService.HintSize="910,3864" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" Name="DictExtractedDataTables" />
       <Variable x:TypeArguments="x:String" Name="CurrentKey" />
@@ -152,7 +152,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <TryCatch DisplayName="Workflow with exception handling and retry scope" sap:VirtualizedContainerService.HintSize="588.8,3784" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Workflow with exception handling and retry scope" sap:VirtualizedContainerService.HintSize="588.8,3727.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -160,20 +160,35 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="587.2,3273.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="587.2,3216.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="Extracting Header Details, Summary Data and Services in the form of data tables from the Invoices using IXP and storing all the data tables into a dictionary" sap:VirtualizedContainerService.HintSize="553.6,3209.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence sap2010:Annotation.AnnotationText="Extracting Header Details, Summary Data and Services in the form of data tables from the Invoices using IXP and storing all the data tables into a dictionary" sap:VirtualizedContainerService.HintSize="553.6,3152.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,178.4" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Extracting Data from Invoice&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,60.8" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Extracting Data from Invoice&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,60.8" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;Extracting Data from Invoice&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
             <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasegb:GptIxp45" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Data from Invoice" DocType="gpt_ixp_45" ExtractionResults="[ExtractionResults]" ExtractorName="gpt_ixp_45" FileInput="[UiPath.Platform.ResourceHandling.LocalResource.FromPath(FilePath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="520,60.8" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ModernDocumentTypeId="00000000-0000-0000-0000-000000000000" ModernDocumentTypeName="Default" ProjectId="efd10460-6cd2-80a6-94cb-b9e0bb5030ee" ProjectName="Invoice Task Demo" ProjectVersionName="45" ProjectVersionNumber="45" TimeoutInSeconds="3600">
               <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
                 <InArgument x:TypeArguments="s:Nullable(x:Int32)">
