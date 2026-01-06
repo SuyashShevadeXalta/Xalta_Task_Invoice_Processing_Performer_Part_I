@@ -44,6 +44,12 @@
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.GptIxp27.Bundle</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.GptIxp31.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.GptIxp5.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.GptIxp7.Bundle</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -92,15 +98,24 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.O7XOP2On18D1TKXgtuhGzN3</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.W7zuj2Y8y9Q1rLvFm1P22bP1</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.gCfxO29T1UF1J1HrG2LJTES4</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.h0WS3xrqDB1Fhk8yztpvK4</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadInvoiceFromStorageBucket" sap:VirtualizedContainerService.HintSize="810.8000000000001,2569.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadInvoiceFromStorageBucket" sap:VirtualizedContainerService.HintSize="555.3333333333334,2574.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="555.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Started DownloadinvoiceFromStorageBucket&quot;]">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="555.3333333333334,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Started DownloadinvoiceFromStorageBucket&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -108,7 +123,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Assign DisplayName="Assign exception to nothing" sap:VirtualizedContainerService.HintSize="555.2,56.8" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign exception to nothing" sap:VirtualizedContainerService.HintSize="555.3333333333334,57.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:Exception">[out_Exception]</OutArgument>
       </Assign.To>
@@ -122,15 +137,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[in_FileName.Contains(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="555.2,605.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_FileName.Contains(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="555.3333333333334,608.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,233.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,235.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="416,169.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign sap:VirtualizedContainerService.HintSize="416,171.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_FileDownloadPath]</OutArgument>
             </Assign.To>
@@ -158,7 +173,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <TryCatch DisplayName="Workflow with exception handling and retry scope" sap:VirtualizedContainerService.HintSize="555.2,1709.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Workflow with exception handling and retry scope" sap:VirtualizedContainerService.HintSize="555.3333333333334,1709.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
