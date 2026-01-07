@@ -65,6 +65,69 @@
         "hash": "LTQwOTE2MDg2MQ",
         "assemblyName": "ExtendedExtractionRe.n8JQs1q1DyC1CmLUX4zlRFa3"
       }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "-1289333645",
+        "bundleName": "ExtendedExtractionResultsForDocumentData.GptIxp13",
+        "entitiesBundle": {
+          "Types": {
+            "InvoiceDetails": {
+              "name": "InvoiceDetails",
+              "properties": [
+                {
+                  "name": "HeaderDetails",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedFieldNoMultivalues`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "SummaryTable",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedFieldNoMultivalues`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                },
+                {
+                  "name": "Services",
+                  "type": {
+                    "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtractedFieldNoMultivalues`1[[System.String, System.Private.CoreLib]], UiPath.IntelligentOCR.StudioWeb.Activities"
+                  }
+                }
+              ],
+              "values": [],
+              "baseType": {
+                "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtendedExtractionResultsForDocumentData, UiPath.IntelligentOCR.StudioWeb.Activities"
+              },
+              "generateChangeNotifications": true
+            },
+            "GptIxp13": {
+              "name": "GptIxp13",
+              "properties": [
+                {
+                  "name": "InvoiceDetails",
+                  "type": {
+                    "definitionName": "InvoiceDetails"
+                  },
+                  "isCollection": true
+                }
+              ],
+              "values": [],
+              "baseType": {
+                "ClrType": "UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction.ExtendedExtractionResultsForDocumentData, UiPath.IntelligentOCR.StudioWeb.Activities"
+              },
+              "generateChangeNotifications": true
+            }
+          },
+          "Metadata": {},
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.GptIxp13",
+        "hash": "LTEyODkzMzM2NDU",
+        "assemblyName": "ExtendedExtractionRe.wKGTT1FnmuP1OnjQ33M085W3"
+      }
     }
   ]
 }

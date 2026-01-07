@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="IXPProject" this:IXPProject.in_FilePath="127857801.pdf" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisasegb="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.GptIxp13.Bundle;assembly=ExtendedExtractionRe.eRpSq34izBF1O3Z6h1XVMwf" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="IXPProject" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisasegb="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.GptIxp13.Bundle;assembly=ExtendedExtractionRe.wKGTT1FnmuP1OnjQ33M085W3" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -109,9 +109,10 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>ExtendedExtractionRe.eRpSq34izBF1O3Z6h1XVMwf</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.wKGTT1FnmuP1OnjQ33M085W3</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="IXPProject" sap:VirtualizedContainerService.HintSize="642,2398" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="IXPProject" sap:VirtualizedContainerService.HintSize="956.6666666666666,2398" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -176,7 +177,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasegb:GptIxp13" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="True" DisplayName="Extract Document Data" DocType="gpt_ixp_13" ExtractionResults="[out_ExtractedData]" ExtractorName="gpt_ixp_13" FileInput="[LocalResource.FromPath(in_FilePath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="416,358.6666666666667" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ModernDocumentTypeId="00000000-0000-0000-0000-000000000000" ModernDocumentTypeName="Default" ProjectId="c0cec4e9-083f-8041-8832-896032eca313" ProjectName="IXPInvoice" ProjectTag="live" ProjectVersionName="live" ProjectVersionNumber="13" TimeoutInSeconds="3600">
+                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasegb:GptIxp13" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Document Data" DocType="gpt_ixp_13" ExtractionResults="[out_ExtractedData]" ExtractorName="gpt_ixp_13" FileInput="[LocalResource.FromPath(in_FilePath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="416,358.6666666666667" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ModernDocumentTypeId="00000000-0000-0000-0000-000000000000" ModernDocumentTypeName="Default" ProjectId="c0cec4e9-083f-8041-8832-896032eca313" ProjectName="IXPInvoice" ProjectTag="live" ProjectVersionName="live" ProjectVersionNumber="13" TimeoutInSeconds="3600">
                             <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
                               <InArgument x:TypeArguments="s:Nullable(x:Int32)">
                                 <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
@@ -186,7 +187,7 @@
                               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                             </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
                           </p:ExtractDocumentDataWithDocumentData>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,171.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[out_ExtractedData]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,171.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[out_ExtractedData]" />
                         </Sequence>
                       </Sequence>
                     </TryCatch.Try>
