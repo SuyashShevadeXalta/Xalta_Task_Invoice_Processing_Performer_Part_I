@@ -271,7 +271,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="in_DictExtractDataTable has string and Datatable &#xD;&#xA;merge all table in one" DisplayName="Try" sap:VirtualizedContainerService.HintSize="522.6666666666666,1077.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap2010:Annotation.AnnotationText="in_DictExtractDataTable has string and Datatable &#xA;merge all table in one" DisplayName="Try" sap:VirtualizedContainerService.HintSize="522.6666666666666,1077.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -286,7 +286,7 @@
               <InArgument x:TypeArguments="sd:DataTable">[New System.Data.DataTable()]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, sd:DataTable)" CurrentIndex="{x:Null}" DisplayName="Iterate through each DataTable in the provided dictionary." sap:VirtualizedContainerService.HintSize="488.6666666666667,788" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[New System.Object() {&quot;in_DictExtractedDataTable&quot; }]">
+          <ui:ForEach x:TypeArguments="scg:KeyValuePair(x:String, sd:DataTable)" CurrentIndex="{x:Null}" DisplayName="Iterate through each DataTable in the provided dictionary." sap:VirtualizedContainerService.HintSize="488.6666666666667,788" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_DictExtractedDataTable]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="scg:KeyValuePair(x:String, sd:DataTable)">
                 <ActivityAction.Argument>
