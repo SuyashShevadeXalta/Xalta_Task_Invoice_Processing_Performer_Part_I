@@ -2,13 +2,10 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_Exception" Type="OutArgument(s:Exception)" />
-    <x:Property Name="in_DictExtractedDataTable" Type="InArgument(scg:Dictionary(x:String, sd:DataTable))" />
+    <x:Property Name="io_DictExtractedDataTable" Type="InOutArgument(scg:Dictionary(x:String, sd:DataTable))" />
     <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_FileName" Type="InArgument(x:String)" />
   </x:Members>
-  <this:BaseWorkFlow.in_DictExtractedDataTable>
-    <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" />
-  </this:BaseWorkFlow.in_DictExtractedDataTable>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -112,56 +109,18 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="BaseWorkFlow" sap:VirtualizedContainerService.HintSize="642,1755.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="BaseWorkFlow" sap:VirtualizedContainerService.HintSize="956.6666666666666,1898.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="MergeDataTable" />
+      <Variable x:TypeArguments="scg:IList(x:String)" Name="TableNameList" />
+      <Variable x:TypeArguments="scg:IList(sd:DataTable)" Name="DataTableList" />
+      <Variable x:TypeArguments="upau:UserActionData" Name="AppTask" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ConfigWorkflow - Invoke Workflow File (WorkFlows\ConfigWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WorkFlows\ConfigWorkflow.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile" />
-        <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets" />
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[in_Config]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetTableFromIXPResult - Invoke Workflow File (WorkFlows\GetTableFromIXPResult.xaml)" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="WorkFlows\GetTableFromIXPResult.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[in_FilePath]</InArgument>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" x:Key="out_DictExtractedDataTables">[in_DictExtractedDataTable]</OutArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-        <OutArgument x:TypeArguments="s:Exception" x:Key="out_Exception">[out_Exception]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MergeDataTable - Invoke Workflow File (WorkFlows\MergeDataTable.xaml)" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="WorkFlows\MergeDataTable.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" x:Key="in_DictExtractedDataTable">[in_DictExtractedDataTable]</InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-        <OutArgument x:TypeArguments="s:Exception" x:Key="out_Exception">[out_Exception]</OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_MergedDataTable">[MergeDataTable]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started ___HITL Process___&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -184,7 +143,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <TryCatch DisplayName="Handle exceptions and log messages" sap:VirtualizedContainerService.HintSize="486,1446" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Handle exceptions and log messages" sap:VirtualizedContainerService.HintSize="486,1761.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -192,33 +151,49 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="484,933.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="484,1248.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="450,869.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence sap:VirtualizedContainerService.HintSize="450,1188.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="CurrentIndex" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <upau:CreateUserAction ExternalTag="{x:Null}" Labels="{x:Null}" PrimaryActionableOutcome="{x:Null}" PrimaryButtonLabel="{x:Null}" SecondaryActionableOutcome="{x:Null}" SecondaryButtonLabel="{x:Null}" TaskCatalog="{x:Null}" TaskFieldsForDesktop="{x:Null}" TaskFieldsForWeb="{x:Null}" TaskOutput="{x:Null}" TimeoutMs="{x:Null}" ActionableNotification="False" DisplayName="Create App Task" EnforcePropertyRefresh="False" FolderPath="Test" sap:VirtualizedContainerService.HintSize="416,607.3333333333334" sap2010:WorkflowViewState.IdRef="CreateUserAction_1" SolutionApp="HITL Invoice" SolutionTaskCatalog="[Nothing]" TaskPriority="Medium" TaskTitle="Test">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MergeDataTable - Invoke Workflow File (WorkFlows\MergeDataTable.xaml)" sap:VirtualizedContainerService.HintSize="416,186.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WorkFlows\MergeDataTable.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" x:Key="in_DictExtractedDataTable">[io_DictExtractedDataTable]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                <OutArgument x:TypeArguments="s:Exception" x:Key="out_Exception">[out_Exception]</OutArgument>
+                <OutArgument x:TypeArguments="scg:IList(x:String)" x:Key="out_TableNamesList">[TableNameList]</OutArgument>
+                <OutArgument x:TypeArguments="scg:IList(sd:DataTable)" x:Key="dataTablesList">[DataTableList]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <upau:CreateUserAction ExternalTag="{x:Null}" Labels="{x:Null}" PrimaryActionableOutcome="{x:Null}" PrimaryButtonLabel="{x:Null}" SecondaryActionableOutcome="{x:Null}" SecondaryButtonLabel="{x:Null}" TaskCatalog="{x:Null}" TaskFieldsForDesktop="{x:Null}" TaskFieldsForWeb="{x:Null}" TimeoutMs="{x:Null}" ActionableNotification="False" DisplayName="Create App Task" EnforcePropertyRefresh="False" FolderPath="shevadesuyash3@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="416,554.6666666666666" sap2010:WorkflowViewState.IdRef="CreateUserAction_1" SolutionApp="HITL Invoice" SolutionTaskCatalog="[Nothing]" TaskOutput="[AppTask]" TaskPriority="Medium" TaskTitle="[&quot;App Task for Invoice : &quot;+in_FileName]">
               <upau:CreateUserAction.AppActionData>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="CompleteDataTable">[MergeDataTable]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="InvoiceFilePath">[in_FilePath]</InArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="CompleteOutputDataTable" x:Name="__ReferenceID0" />
-                <InOutArgument x:TypeArguments="scg:List(sd:DataTable)" x:Key="ListInvoiceDetailDataTable" x:Name="__ReferenceID1" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceFilePath">[in_FilePath]</InArgument>
+                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_TableName">[TableNameList.ToList()]</InArgument>
+                <InOutArgument x:TypeArguments="scg:List(sd:DataTable)" x:Key="io_InvoiceDetailDataTable">[DataTableList]</InOutArgument>
               </upau:CreateUserAction.AppActionData>
               <upau:CreateUserAction.AppActionPropertiesMetadata>
-                <upama:SchemaPropertiesMetadata x:Key="CompleteDataTable" Format="DataTable" />
-                <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="InvoiceFilePath" />
-                <upama:SchemaPropertiesMetadata x:Key="CompleteOutputDataTable" Format="DataTable" />
-                <upama:SchemaPropertiesMetadata x:Key="ListInvoiceDetailDataTable" Format="List" />
+                <upama:SchemaPropertiesMetadata Format="{x:Null}" x:Key="in_InvoiceFilePath" />
+                <upama:SchemaPropertiesMetadata x:Key="in_TableName" Format="List" />
+                <upama:SchemaPropertiesMetadata x:Key="io_InvoiceDetailDataTable" Format="List" />
               </upau:CreateUserAction.AppActionPropertiesMetadata>
               <upau:CreateUserAction.CurrentAppTaskState>
-                <upama:AppTaskState CodeBehindProcessKey="{x:Null}" CodeBehindRuntimeType="{x:Null}" AppId="ID505b4dfa5a914215b498433a88727d65" AppName="HITL Invoice" AppVersion="6" FolderKey="23b8ff92-0c69-4739-bd89-f3d65f532449" />
+                <upama:AppTaskState CodeBehindProcessKey="{x:Null}" CodeBehindRuntimeType="{x:Null}" AppId="ID505b4dfa5a914215b498433a88727d65" AppName="HITL Invoice" AppVersion="10" FolderKey="23b8ff92-0c69-4739-bd89-f3d65f532449" />
               </upau:CreateUserAction.CurrentAppTaskState>
               <upau:CreateUserAction.SolutionAppResources>
                 <scg:Dictionary x:TypeArguments="x:String, x:String" />
@@ -231,25 +206,59 @@
                     </scg:List>
                   </upama:RecordDynamicActionPropertiesState.AllowedActions>
                   <upama:RecordDynamicActionPropertiesState.SelectedFields>
-                    <scg:List x:TypeArguments="upama:DynamicActionDefinitionSchemaField" Capacity="4">
-                      <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="InvoiceFilePath" PropertyType="System.String">
+                    <scg:List x:TypeArguments="upama:DynamicActionDefinitionSchemaField" Capacity="3">
+                      <upama:DynamicActionDefinitionSchemaField PropertyFormat="{x:Null}" Direction="In" IsRequired="False" Name="in_InvoiceFilePath" PropertyType="System.String">
                         <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
                           <InArgument x:TypeArguments="x:String">[in_FilePath]</InArgument>
                         </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
                       </upama:DynamicActionDefinitionSchemaField>
-                      <upama:DynamicActionDefinitionSchemaField Direction="In" IsRequired="False" Name="CompleteDataTable" PropertyFormat="DataTable" PropertyType="System.Data.DataTable">
+                      <upama:DynamicActionDefinitionSchemaField Direction="In" IsRequired="False" Name="in_TableName" PropertyFormat="List" PropertyType="System.String">
                         <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
-                          <InArgument x:TypeArguments="sd:DataTable">[MergeDataTable]</InArgument>
+                          <InArgument x:TypeArguments="scg:List(x:String)">[TableNameList.ToList()]</InArgument>
                         </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
                       </upama:DynamicActionDefinitionSchemaField>
-                      <upama:DynamicActionDefinitionSchemaField ArgumentValue="{x:Reference __ReferenceID0}" Direction="Out" IsRequired="False" Name="CompleteOutputDataTable" PropertyFormat="DataTable" PropertyType="System.Data.DataTable" />
-                      <upama:DynamicActionDefinitionSchemaField ArgumentValue="{x:Reference __ReferenceID1}" Direction="InOut" IsRequired="False" Name="ListInvoiceDetailDataTable" PropertyFormat="List" PropertyType="System.Data.DataTable" />
+                      <upama:DynamicActionDefinitionSchemaField Direction="InOut" IsRequired="False" Name="io_InvoiceDetailDataTable" PropertyFormat="List" PropertyType="System.Data.DataTable">
+                        <upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                          <InOutArgument x:TypeArguments="scg:List(sd:DataTable)">[DataTableList]</InOutArgument>
+                        </upama:DynamicActionDefinitionSchemaField.ArgumentValue>
+                      </upama:DynamicActionDefinitionSchemaField>
                     </scg:List>
                   </upama:RecordDynamicActionPropertiesState.SelectedFields>
                 </upama:RecordDynamicActionPropertiesState>
               </upau:CreateUserAction.State>
             </upau:CreateUserAction>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,171.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[String.Join(&quot;,&quot;, MergeDataTable.Columns.Cast(Of DataColumn)().Select(Function(col) col.ColumnName)) &amp; Environment.NewLine &amp; String.Join(Environment.NewLine, MergeDataTable.AsEnumerable().Select(Function(row) String.Join(&quot;,&quot;, row.ItemArray)))]" />
+            <upau:WaitForUserActionAndResume StatusMessage="{x:Null}" TaskAction="{x:Null}" TaskOutput="{x:Null}" TimeoutMs="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait For App Task and Resume" sap:VirtualizedContainerService.HintSize="416,128" sap2010:WorkflowViewState.IdRef="WaitForUserActionAndResume_1" TaskInput="[AppTask]" />
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[CurrentIndex]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="416,61.333333333333336" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[TableNameList]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,235.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="416,171.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataTable">[io_DictExtractedDataTable(currentText)]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataTable">[DataTableList.Item(CurrentIndex)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEach>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,171.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Dict Updated &quot;]" />
           </Sequence>
         </Sequence>
       </TryCatch.Try>
